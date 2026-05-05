@@ -167,6 +167,20 @@ services:
       - 9091:9091
     restart: unless-stopped
 
+  cross-seed:
+    image: ghcr.io/cross-seed/cross-seed:6
+    container_name: cross-seed
+    user: 1000:1000 # this must match your torrent client (cross-seed does not support using PGID and PUID)
+    ports:
+      - "2468:2468"
+    volumes:
+      - ${CONTAINER_PATH:? need container path}/cross-seed/config:/config
+      - ${DATA_PATH:? need data path}/downloads:/downloads
+    command: daemon
+    restart: unless-stopped
+    depends_on:
+      - transmission-openvpn
+
   scan2epub:
     image: lordpax/scan2epub:latest
     platform: linux/arm64
