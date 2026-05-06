@@ -151,6 +151,8 @@ services:
       - ${CONTAINER_PATH:? need container path}/transmission/config/:/config
       - ${DATA_PATH:? need data path}/downloads/:/data
     environment:
+      - PUID=1000
+      - PGID=1000
       - OPENVPN_PROVIDER=${OPENVPN_PROVIDER:? [Transmission] need a provider}
       - OPENVPN_CONFIG=${OPENVPN_CONFIG:? [Transmission] need a config file}
       - OPENVPN_USERNAME=${OPENVPN_USERNAME:? [Transmission] need openvpn username}
@@ -175,7 +177,7 @@ services:
       - "2468:2468"
     volumes:
       - ${CONTAINER_PATH:? need container path}/cross-seed/config:/config
-      - ${DATA_PATH:? need data path}/downloads:/downloads
+      - ${DATA_PATH:? need data path}/downloads:/data
     command: daemon
     restart: unless-stopped
     depends_on:
