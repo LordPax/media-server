@@ -103,6 +103,16 @@ cron="30 15 * * 0,3" # Every Sunday and Wednesday at 15:30
 cron_chap=1132
 ```
 
+### Cross-seed
+
+[Documentation](https://www.cross-seed.org/docs/basics/getting-started)
+
+Modify config to the `CONTAINER_PATH/cross-seed/config/config.js` file
+
+- torznab: `http://prowlarr:9696/11/api?apikey=PROWLARR_API_KEY`
+- torrentClients: `transmission:http://USERNAME:PASSWORD@transmission-openvpn:9091/transmission/rpc`
+- linkDirs: `/data/completed/cross-seed-links`
+
 ### Permissions
 
 Set the permissions for the data folder (replace DATA_PATH with the path in the .env file)
