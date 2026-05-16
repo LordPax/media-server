@@ -4,19 +4,19 @@ server {
     listen [::]:80 default_server;
     listen 443 ssl default_server;
     listen [::]:443 ssl default_server;
-    
+
     ssl_certificate /etc/nginx/certs/gauthier-ted.com.crt;
     ssl_certificate_key /etc/nginx/certs/gauthier-ted.com.key;
-    
+
     server_name _;
-    
+
     return 444; # Ferme la connexion sans réponse
 }
 
 server {
     listen 80;
     listen [::]:80;
-    server_name jellyfin.${DOMAIN} ombi.${DOMAIN} radarr.${DOMAIN} sonarr.${DOMAIN} prowlarr.${DOMAIN} transmission.${DOMAIN} lidarr.${DOMAIN} readarr.${DOMAIN};
+    server_name jellyfin.${DOMAIN} radarr.${DOMAIN} sonarr.${DOMAIN} prowlarr.${DOMAIN} transmission.${DOMAIN} lidarr.${DOMAIN} readarr.${DOMAIN} seerr.${DOMAIN};
     return 301 https://$host$request_uri;
 }
 
@@ -38,25 +38,6 @@ server {
     }
 }
 
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    server_name ombi.${DOMAIN};
-
-    ssl_certificate /etc/nginx/certs/${DOMAIN}.crt;
-    ssl_certificate_key /etc/nginx/certs/${DOMAIN}.key;
-
-    location / {
-        proxy_pass http://ombi:3579;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection keep-alive;
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-
-# TODO : remove when seerr will be configured
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
