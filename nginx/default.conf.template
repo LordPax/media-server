@@ -10,7 +10,7 @@ server {
     
     server_name _;
     
-    return 444;  # Ferme la connexion sans réponse
+    return 444; # Ferme la connexion sans réponse
 }
 
 server {
@@ -48,6 +48,25 @@ server {
 
     location / {
         proxy_pass http://ombi:3579;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection keep-alive;
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+# TODO : remove when seerr will be configured
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name seerr.${DOMAIN};
+
+    ssl_certificate /etc/nginx/certs/${DOMAIN}.crt;
+    ssl_certificate_key /etc/nginx/certs/${DOMAIN}.key;
+
+    location / {
+        proxy_pass http://seerr:5055;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection keep-alive;

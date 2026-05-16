@@ -13,7 +13,7 @@ Docker container for media management and automation. This repo includes Radarr,
 - [Readarr](http://localhost:8787) - for books filter and search on indexers
 - [Prowlarr](http://localhost:9696) - for indexers management
 - [Transmission](http://localhost:9091) - for torrents downloads
-- [Ombi](http://localhost:3579) - for requests management
+- [Seerr](http://localhost:5055) - for requests management
 
 ## Steps
 

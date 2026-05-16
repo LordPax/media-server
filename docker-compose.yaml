@@ -17,6 +17,7 @@ services:
     depends_on:
       - jellyfin
       - ombi
+      - seerr
       - prowlarr
       - radarr
       - sonarr
@@ -125,6 +126,7 @@ services:
       - 9696:9696
     restart: unless-stopped
 
+  # TODO : remove when seerr will be configured
   ombi:
     image: lscr.io/linuxserver/ombi:latest
     container_name: ombi
@@ -138,7 +140,37 @@ services:
       - 3579:3579
     restart: unless-stopped
     depends_on:
-      - jellyfin
+      - sonarr
+      - radarr
+      - lidarr
+      - readarr
+
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    init: true
+    container_name: seerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - LOG_LEVEL=debug
+      - TZ=${TIMEZONE:-Europe/Paris}
+      - PORT=5055 #optional
+    ports:
+      - 5055:5055
+    volumes:
+      - ${CONTAINER_PATH? need container path}/seerr/config:/app/config
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+      retries: 3
+    restart: unless-stopped
+    depends_on:
+      - sonarr
+      - radarr
+      - lidarr
+      - readarr
 
   transmission-openvpn:
     image: haugene/transmission-openvpn
@@ -182,6 +214,7 @@ services:
     restart: unless-stopped
     depends_on:
       - transmission-openvpn
+      - prowlarr
 
   scan2epub:
     image: lordpax/scan2epub:latest
