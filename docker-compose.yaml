@@ -16,7 +16,6 @@ services:
     restart: unless-stopped
     depends_on:
       - jellyfin
-      - ombi
       - seerr
       - prowlarr
       - radarr
