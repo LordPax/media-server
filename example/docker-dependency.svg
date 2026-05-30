@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-230 -830 1190 850">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <marker id="arrowhead-color1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e91e63" />
+    </marker>
+    <marker id="arrowhead-color2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9c27b0" />
+    </marker>
+    <marker id="arrowhead-color3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f44336" />
+    </marker>
+    <marker id="arrowhead-color4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ff9800" />
+    </marker>
+    <marker id="arrowhead-color5" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#00bcd4" />
+    </marker>
+    <marker id="arrowhead-color6" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4caf50" />
+    </marker>
+  </defs>
+  
+  <!-- Edges -->
+  <path d="M 505 -400 L 225 -220" stroke="#00bcd4" stroke-width="2" fill="none" marker-end="url(#arrowhead-color5)" />
+  <path d="M 505 -400 L 505 -220" stroke="#00bcd4" stroke-width="2" fill="none" marker-end="url(#arrowhead-color5)" />
+  <path d="M 225 -400 L 225 -220" stroke="#9c27b0" stroke-width="2" fill="none" marker-end="url(#arrowhead-color2)" />
+  <path d="M 225 -400 L 505 -220" stroke="#9c27b0" stroke-width="2" fill="none" marker-end="url(#arrowhead-color2)" />
+  <path d="M -55 -400 L 225 -220" stroke="#ff9800" stroke-width="2" fill="none" marker-end="url(#arrowhead-color4)" />
+  <path d="M -55 -400 L 505 -220" stroke="#ff9800" stroke-width="2" fill="none" marker-end="url(#arrowhead-color4)" />
+  <path d="M 785 -400 L 225 -220" stroke="#f44336" stroke-width="2" fill="none" marker-end="url(#arrowhead-color3)" />
+  <path d="M 785 -400 L 505 -220" stroke="#f44336" stroke-width="2" fill="none" marker-end="url(#arrowhead-color3)" />
+  <path d="M 365 -600 L 225 -460" stroke="#4caf50" stroke-width="2" fill="none" marker-end="url(#arrowhead-color6)" />
+  <path d="M 365 -600 L 505 -460" stroke="#4caf50" stroke-width="2" fill="none" marker-end="url(#arrowhead-color6)" />
+  <path d="M 365 -40 L 225 -160" stroke="#e91e63" stroke-width="2" fill="none" marker-end="url(#arrowhead-color1)" />
+  <path d="M 365 -40 L 505 -160" stroke="#e91e63" stroke-width="2" fill="none" marker-end="url(#arrowhead-color1)" />
+  <path d="M 240 -750 L 480 -750" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <text x="360" y="-760" font-size="12" font-family="Arial, Helvetica, sans-serif" fill="#666" text-anchor="middle">depend on</text>
+  
+  <!-- Nodes -->
+  <rect x="660" y="-460" width="250" height="60" fill="#f44336" stroke="#333" stroke-width="2" rx="5" />
+  <text x="785" y="-425" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Readarr</text>
+  
+  <rect x="100" y="-220" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="225" y="-185" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Transmission</text>
+  
+  <rect x="380" y="-220" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="505" y="-185" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Prowlarr</text>
+  
+  <rect x="-180" y="-220" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="-55" y="-185" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Jellyfin</text>
+  
+  <rect x="240" y="-660" width="250" height="60" fill="#4caf50" stroke="#333" stroke-width="2" rx="5" />
+  <text x="365" y="-625" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Seerr</text>
+  
+  <rect x="240" y="-40" width="250" height="60" fill="#e91e63" stroke="#333" stroke-width="2" rx="5" />
+  <text x="365" y="-5" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Cross seed</text>
+  
+  <rect x="660" y="-220" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="785" y="-185" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Scan2epub</text>
+  
+  <rect x="480" y="-780" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="605" y="-745" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Service 2</text>
+  
+  <rect x="-10" y="-780" width="250" height="60" fill="#e0e0e0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="115" y="-745" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="#333" text-anchor="middle" dominant-baseline="middle">Service 1</text>
+  
+  <rect x="100" y="-460" width="250" height="60" fill="#9c27b0" stroke="#333" stroke-width="2" rx="5" />
+  <text x="225" y="-425" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Radarr</text>
+  
+  <rect x="380" y="-460" width="250" height="60" fill="#00bcd4" stroke="#333" stroke-width="2" rx="5" />
+  <text x="505" y="-425" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Sonarr</text>
+  
+  <rect x="-180" y="-460" width="250" height="60" fill="#ff9800" stroke="#333" stroke-width="2" rx="5" />
+  <text x="-55" y="-425" font-size="16" font-family="Arial, Helvetica, sans-serif" fill="white" text-anchor="middle" dominant-baseline="middle">Lidarr</text>
+</svg>

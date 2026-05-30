@@ -4,6 +4,11 @@
 
 Docker container for media management and automation. This repo includes Radarr, Sonarr, Bazarr, Prowlarr, Transmission, Jellyfin and Ombi for a complete media downloading, organization and streaming solution.
 
+## Scheme
+
+![docker dependency](example/docker-dependency.svg)
+
+
 ## Service
 
 - [Jellyfin](http://localhost:8096/web) - for media streaming
